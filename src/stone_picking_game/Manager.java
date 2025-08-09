@@ -20,9 +20,9 @@ public class Manager {
         
     }
     
-    public static void printTurnResult(int count) {
+    public static void printTurnResult(String currentPlayer, int count) {
 
-        System.out.println("あなたは" + count + "個の石を取りました。残りの石:" + Manager.stones);
+        System.out.println(currentPlayer + "は" + count + "個の石を取りました。残りの石:" + stones);
 
     }
     

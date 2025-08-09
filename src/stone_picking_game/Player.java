@@ -2,16 +2,18 @@ package stone_picking_game;
 import java.util.Scanner;
 
 public class Player {
-    public void Turn(String currentPlayer) {
+
+    public void takeTurn(String currentPlayer) {
 
         int count = getCount(Manager.stones);
         Manager.updateStones(count);
-        Manager.printTurnResult(count);
+        Manager.printTurnResult(currentPlayer, count);
         Manager.changeTurn(currentPlayer);
 
     }
 
     protected int getCount(int stones) {
+
         Scanner scanner = new Scanner(System.in);
         int maxCount = Manager.maxCount;
         int minimumCount = Manager.minimumCount;
@@ -26,7 +28,7 @@ public class Player {
                 count = scanner.nextInt();
                 if(count < 1 || count > maxCount) {
 
-                    System.out.println(minimumCount + "〜" + stones + "以外の数字を入力しました。");
+                    System.out.println(minimumCount + "〜" + maxCount + "以外の数字を入力しました。");
 
                 }
 
@@ -64,4 +66,5 @@ public class Player {
         return count;
 
     }
+
 }

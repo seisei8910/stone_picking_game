@@ -3,9 +3,12 @@ import java.util.Random;
 
 public class Computer {
     
-    protected void turn(String cullrntComputer) {
+    protected void takeTurn(String cullrntComputer) {
         
-        
+        int count = getCount(Manager.stones);
+        Manager.updateStones(count);
+        Manager.printTurnResult(cullrntComputer, count);
+        Manager.changeTurn(cullrntComputer);
         
     }
 
