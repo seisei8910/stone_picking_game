@@ -2,6 +2,13 @@ package stone_picking_game;
 import java.util.Scanner;
 
 public class Player {
+    public void Turn() {
+        
+        int count = getCount(Manager.stones);
+        Manager.stones = Manager.stones - count;
+        System.out.println("あなたは" + count + "個の石を取りました。残りの石:" + Manager.stones);
+        
+    }
 
     protected int getCount(int stones) {
         Scanner scanner = new Scanner(System.in);
