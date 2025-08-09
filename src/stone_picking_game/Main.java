@@ -5,10 +5,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int stones = 30;
+        Player player1 = new Player();
+        Computer computer1 = new Computer();
 
-        while(stones > 0) {
-
+        Manager.printRule();
+        while(Manager.stones > 0) {
+            
         }
 
     }
