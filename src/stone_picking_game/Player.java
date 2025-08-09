@@ -2,12 +2,13 @@ package stone_picking_game;
 import java.util.Scanner;
 
 public class Player {
-    public void Turn() {
-        
+    public void Turn(String currentPlayer) {
+
         int count = getCount(Manager.stones);
-        Manager.stones = Manager.stones - count;
-        System.out.println("あなたは" + count + "個の石を取りました。残りの石:" + Manager.stones);
-        
+        Manager.updateStones(count);
+        Manager.printTurnResult(count);
+        Manager.changeTurn(currentPlayer);
+
     }
 
     protected int getCount(int stones) {
@@ -23,6 +24,11 @@ public class Player {
             if(scanner.hasNextInt()) {
 
                 count = scanner.nextInt();
+                if(count < 1 || count > maxCount) {
+
+                    System.out.println(minimumCount + "〜" + stones + "以外の数字を入力しました。");
+
+                }
 
             } else {
 

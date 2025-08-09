@@ -4,6 +4,7 @@ public class Manager {
     public static int stones = 30;
     public static final int maxCount = 5;
     public static final int minimumCount = 1;
+    private static String turn;
 
     public static void printRule() {
 
@@ -12,4 +13,21 @@ public class Manager {
         System.out.println("最後の石を取った方が負けです。");
 
     }
+    
+    public static void updateStones(int count) {
+        
+        stones = stones - count;
+        
+    }
+    
+    public static void printTurnResult(int count) {
+
+        System.out.println("あなたは" + count + "個の石を取りました。残りの石:" + Manager.stones);
+
+    }
+    
+    public static void changeTurn(String currentPlayer) {
+        turn = currentPlayer;
+    }
+
 }
