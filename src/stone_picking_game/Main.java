@@ -15,6 +15,8 @@ public class Main {
             computer1.takeTurn("computer1");
 
         }
+        
+        Manager.printLossResult();
 
     }
 

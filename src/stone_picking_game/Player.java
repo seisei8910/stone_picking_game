@@ -5,10 +5,14 @@ public class Player {
 
     public void takeTurn(String currentPlayer) {
 
-        int count = getCount(Manager.stones);
-        Manager.updateStones(count);
-        Manager.printTurnResult(currentPlayer, count);
-        Manager.changeTurn(currentPlayer);
+        if(Manager.stones > 0) {
+
+            int count = getCount(Manager.stones);
+            Manager.updateStones(count);
+            Manager.printTurnResult(currentPlayer, count);
+            Manager.changeTurn(currentPlayer);
+
+        }
 
     }
 
@@ -23,9 +27,11 @@ public class Player {
             
             System.out.print("取る石の数 (" + minimumCount + "〜" +
                     maxCount + ") を入力してください:");
+
             if(scanner.hasNextInt()) {
 
                 count = scanner.nextInt();
+
                 if(count < 1 || count > maxCount) {
 
                     System.out.println(minimumCount + "〜" + maxCount + "以外の数字を入力しました。");
@@ -45,13 +51,15 @@ public class Player {
             
             System.out.print("取る石の数 (" + minimumCount + "〜" +
                     stones + ") を入力してください:");
+
             if(scanner.hasNextInt()) {
 
                 count = scanner.nextInt();
+
                 if(count < 1 || count > stones) {
-                    
+
                     System.out.println(minimumCount + "〜" + stones + "以外の数字を入力しました。");
-                    
+
                 }
 
             } else {

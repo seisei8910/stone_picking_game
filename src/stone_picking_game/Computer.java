@@ -5,11 +5,15 @@ public class Computer {
     
     protected void takeTurn(String cullrntComputer) {
         
-        int count = getCount(Manager.stones);
-        Manager.updateStones(count);
-        Manager.printTurnResult(cullrntComputer, count);
-        Manager.changeTurn(cullrntComputer);
-        
+        if(Manager.stones > 0) {
+
+            int count = getCount(Manager.stones);
+            Manager.updateStones(count);
+            Manager.printTurnResult(cullrntComputer, count);
+            Manager.changeTurn(cullrntComputer);
+
+        }
+
     }
 
     protected int getCount(int stones) {
@@ -18,7 +22,9 @@ public class Computer {
         int count = 0;
         
         while(count == 0 || count > stones) {
+
             count = random.nextInt(4) + 1;
+
         }
         return count;
     }
